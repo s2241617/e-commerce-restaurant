@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم مهرانو - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+        .slideshow {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: absolute;
+            animation: slide 5s infinite;
+
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100px); /* بداية الصورة خارج الشاشة من اليسار */
+                opacity: 0; /* الصورة شفافة */
+            }
+            100% {
+                transform: translateX(0); /* تحريك الصورة إلى موضعها الأصلي */
+                opacity: 1; /* عرض الصورة بشكل كامل */
+            }
+        }
+
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            20% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            80% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
+
+        .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #c13636;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+           
+    background-color: #e4465e
+}
+
+.main-content {
+    margin-left: 250px; /* تحديد المسافة بين القائمة الجانبية والمحتوى */
+}
+h1 {
+            color: #e4465e ;  /* لون النص */
+            font-size: 30px; /* حجم الخط */
+            font-weight: bold; /* سمك الخط */
+            text-align: start; /* محاذاة النص */
+            margin-bottom: 30px; /* هامش أسفل */
+        }
+
+        h2 {
+            color:#e4465e ;  /* لون النص */
+            font-size: 30px; /* حجم الخط */
+            font-weight: bold; /* سمك الخط */
+            text-align: right; /* محاذاة النص */
+            margin-bottom: 10px; /* هامش أسفل */
+            text-align: center;
+        }
+
+        p {
+            color: #836641;  ; /* لون النص */
+            font-size: 25px; /* حجم الخط */
+            text-align: justify; /* محاذاة النص */
+            line-height: 1.5; /* ارتفاع السطر */
+            margin-bottom: 15px; /* هامش أسفل */
+            text-align: center;
+        }
+        .p1 {
+            color: #836641; /* لون النص */
+            font-size: 25px; /* حجم الخط */
+            text-align: justify; /* محاذاة النص */
+            line-height: 1.5; /* ارتفاع السطر */
+            margin-bottom: 15px; /* هامش أسفل */
+            text-align: start;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <img src="logo1.jpeg" alt="صورة 1">
+        <img src="loks.jpeg" alt="صورة 2">
+        <img src="kbab.jpeg" alt="صورة 3">
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>مرحبًا بكم في مطعم مهراني الفاخر</h1>
+            <p class="p1">استمتع بتجربة تناول الطعام الراقية معنا</p>
+            <p class="p1">نحن نقدم أشهى الأطباق الفاخرة المستوحاة من المطبخ العالمي. تفضل بزيارتنا واستمتع بتجربة فريدة للذواقة.</p>
+
+        </div>           
+
+    </header>
+
+    <div class="sidenav">
+        <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="menu.html">قائمة الطعام</a></li>
+                    <li><a href="cart.html"> الطلبات</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html">أرقام الاتصال</a></li>
+                    <li><a href="account.html">حسابي</a></li>
+    </div>
+
+    <section class="main-content">
+        <div class="container">
+            <h2>قصتنا</h2>
+            <p>قصتنا تتحدث عن تأسيس علامة تجارية باسم “الملكة”،
+                 والتي تأتي من اللغة الهندية. تم اختيار اسم الملكة للتعبير عن الفخامة والجاذبية التي تميز الملكات 
+                 الهنديات، وتم استخدام رموز الحناء الهندية ونقوش الرانجولي لتعزيز 
+                 هذا المفهوم. الرانجولي هو فن هندي تقليدي يشمل إنشاء أنماط ملونة على الأرض باستخدام موا
+                 د مثل الحناء أو بتلات الزهور، ويعبر عن القوة والكرم. هذا المشروع يهدف إلى تعزيز الهوية 
+                 والقوة والفخامة للعلامة التجارية من خلال هذه العناصر الثقافية الهندية الرائعة</p>
+            <!-- يمكنك إضافة الرسومات الزخرفية هنا -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+    </script>
+    
+</body>
+</html>

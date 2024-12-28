@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الطعام - مطعم مهرانو</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+   .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition:  0.3s ease;
+            background-color: #d0b622;
+            border: none;
+            color: white;
+            margin-right: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          
+        }
+     body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background:  #c13636;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu h2, .menu h3 {
+    text-align: center;
+}
+
+.decorative-line {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #ffa500, #ff4500);
+    margin: 20px 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul li img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+.menu ul li p {
+    flex: 1;
+    margin-left: 20px;
+}
+.sidebar {
+    width: 20%;
+    background: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul li a:hover {
+    background: #ddd;
+}
+
+.content {
+    margin-left: 20%;
+    padding: 20px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1em;
+    text-align: right;
+}
+img{
+ 
+transform: translate(100%,50%);
+height: 70px;
+width: 150;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-item {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .menu-item:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .menu-item p {
+            margin: 10px 0;
+        }
+        .menu-item button {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-item button:hover {
+            background-color: #555;
+        }
+        .menu {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu h2 {
+            margin-bottom: 20px;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>أصناف الطعام</h2>
+        <ul>
+            <li><a href="#soup">الشوربة</a></li>
+            <li><a href="#cold-appetizers">المقبلات الباردة</a></li>
+            <li><a href="#hot-appetizers">المقبلات الساخنة</a></li>
+            <li><a href="#indian-cuisine">ركن المأكولات الهندية</a></li>
+            <li><a href="#chinese-cuisine">ركن المأكولات الصينية</a></li>
+            <li><a href="#grill-tandoori">ركن المشويات والتندوري</a></li>
+            <li><a href="#seafood">ركن المأكولات البحرية</a></li>
+            <li><a href="#western-cuisine">ركن المأكولات الغربية</a></li>
+            <li><a href="#rice-pasta">ركن الأرز والمكرونة</a></li>
+            <li><a href="#bread">ركن الخبز</a></li>
+            <li><a href="#kids-meal">وجبة الطفل</a></li>
+            <li><a href="#desserts">الحلويات</a></li>
+            <li><a href="#cold-drinks">المشروبات الباردة</a></li>
+            <li><a href="#drinks">المشروبات</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1>مطعم مهراني</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="menu.html">قائمة الطعام</a></li>
+                        <li><a href="cart.html">الطلبات</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html">أرقام الاتصال</a></li>
+                        <li><a href="account.html">حسابي</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <section class="menu">
+            <div class="container">
+                <h2>قائمة الطعام</h2>
+                <ul id="orders">
+                <h3 id="soup">الشوربة</h3>
+                <ul>
+                    <li>
+                        <img src="شوربة الدجاج مع الكريمة.jpeg" alt="شوربة دجاج مع الكريمة">
+                        <p>1- شوربة دجاج مع الكريمة <br> السعر: 18 ريال <br> السعرات الحرارية:117</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>                
+                        <img src="شوربة ثمار البحر مع الكريمة.avif" alt="شوربة ثمار البحر مع الكريمة">
+                        <p>1- شوربة ثمار البحر مع الكريمة <br> السعر: 27 ريال <br> السعرات الحرارية: 207</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                    <img src="شوربة العدس.avif" alt="شوربةالعدس">
+                    <p>1- شوربة عدس <br> السعر: 14 ريال <br> السعرات الحرارية:93</p>
+                </li>
+                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+               
+                    <li>
+                        <img src="شوربة ذرة مع الدجاج.avif" alt="شوربة ذرة مع الدجاج">
+                        <p>1-شوربة ذرة مع الدجاج<br> السعر: 18 ريال <br> السعرات الحرارية:48</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <img src="شوربة الروبيان.jpeg" alt="شوربة الذرة مع الروبيان">
+                        <p>1- شوربة الذرة مع الروبيان<br> السعر: 21 ريال <br> السعرات الحرارية: 68</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                    <img src="شوربة روبيان حار حامض.avif" alt="شوربة روبيان حار حامض">
+                    <p>1- شوربة روبيان حار حامض<br> السعر: 18 ريال <br> السعرات الحرارية:117</p>
+                </li>
+                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                </ul>
+            
+                <h3 id="cold-appetizers">المقبلات الباردة</h3>
+                <ul>
+                    <li>
+                        <img src="حمص لبناني مع الطحينة.avif" alt="حمص لبناني مع الطحينة">
+                        <p>1- حمص لبناني مع الطحينة <br> السعر: 15 ريال <br> السعرات الحرارية:204</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="متبل باذنجان.avif" alt="متبل باذنجان">
+                        <p>1- متبل باذنجان <br> السعر: 12 ريال <br> السعرات الحرارية:146</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="بابا غنوج.avif" alt="بابا غنوج">
+                        <p>1- بابا غنوج <br> السعر: 11 ريال <br> السعرات الحرارية:148</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سلطة سيزر .avif" alt="سلطة سيزر">
+                        <p>1- سلطة سيزر <br> السعر: 24 ريال <br> السعرات الحرارية:328</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سلطة جرجير.avif" alt="سبطة الجرجير">
+                        <p>1- سلطة الجرجير <br> السعر: 13 ريال <br> السعرات الحرارية:60</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <img src="ورق عنب.avif" alt="ورق عنب">
+                        <p>1- ورق عنب <br> السعر: 16 ريال <br> السعرات الحرارية:240</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سلطة زبادي هندية.avif" alt="سلطةزبادي هندية">
+                        <p>1-  سلطة زبادي هندية<br> السعر: 11 ريال <br> السعرات الحرارية:44</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="ثومية.avif" alt="ثومية">
+                        <p>1-  ثومية<br> السعر: 10 ريال <br> السعرات الحرارية:104</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="مقبلات مشكلة.avif" alt=" مقبلات مشكلة">
+                        <p>1- مقبلات مشكلة <br> السعر: 25 ريال <br> السعرات الحرارية:316</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                </ul>
+            
+                <h3 id="hot-appetizers">المقبلات الساخنة</h3>
+                <ul>
+                    <li>
+                        <img src="لولي بوب.avif" alt="لولي بوب">
+                        <p>1-  لولي بوب<br> السعر: 16 ريال <br> السعرات الحرارية:550</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سمبوسة الدجاج.avif" alt="">
+                        <p>1- سمبوسة الدجاج <br> السعر: 13 ريال <br> السعرات الحرارية:576</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سبرنج رول مع الدجاج.avif" alt="سبرنج رول مع الدجاج">
+                        <p>1- سبرنج رول مع الدجاج <br> السعر: 24 ريال <br> السعرات الحرارية:880</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="روبيان ديناميت.avif" alt="روبيان ديناميت">
+                        <p>1-  روبيان ديناميت<br> السعر: 37 ريال <br> السعرات الحرارية:218</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="بطاطس مقلية.avif" alt="بطاطس مقلية">
+                        <p>1- بطاطس مقلية <br> السعر: 10 ريال <br> السعرات الحرارية:770</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                </ul>
+
+                <h3 id="indian-cuisine">ركن المأكولات الهندية</h3>
+                <ul>
+                    <li>
+                        <img src="دجاج الكاري.avif" alt="دجاج الكاري">
+                        <p>1- دجاج الكاري <br> السعر: 40 ريال <br> السعرات الحرارية:643</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="دجاج مسالا.avif" alt="دجاج مسالا">
+                        <p>1-  دجاج مسالا<br> السعر: 42 ريال <br> السعرات الحرارية:733</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="دجاج مع الزبدة.avif" alt="دجاج مع الزبدة">
+                        <p>1-  <br> السعر: 43 ريال <br> السعرات الحرارية:806</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="دجاج كراهي.avif" alt="دجاج الكراهي">
+                        <p>1-  دجاج الكراهي<br> السعر: 39 ريال <br> السعرات الحرارية:648</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="دجاج حيدر اباد.jpeg" alt="دجاج حيدر اباد">
+                        <p>1- دجاج حيدرأباد<br> السعر: 38 ريال <br> السعرات الحرارية:632</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سمك كراهي.jpeg" alt="سمك كراهي">
+                        <p>1- سمك كراهي <br> السعر:42  ريال <br> السعرات الحرارية:702</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="سمك تكا مسالا.avif" alt="سمك تكا مسالا">
+                        <p>1- سمك تكا مسالا <br> السعر: 43 ريال <br> السعرات الحرارية:720</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="روبيان مسالا.avif" alt="روبيان مسالا">
+                        <p>1- روبيان مسالا <br> السعر: 55 ريال <br> السعرات الحرارية:409</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="لحم مسالا.jpeg" alt="لحم مسالا">
+                        <p>1- لحم مسالا  <br> السعر: 52  ريال <br> السعرات الحرارية:970</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                 </ul>
+
+                <h3 id="chinese-cuisine">ركن المأكولات الصينية</h3>
+                <ul>
+                    <li>
+                        <img src="دجاج منشوريان على الصاج.avif" alt="دجاج منشوريان على الصاج">
+                        <p>1- دجاج منشوريان على الصاج <br> السعر: 42 ريال <br> السعرات الحرارية:528</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+
+                   <li>
+                        <img src="دجاج شيلي حار.jpeg" alt="دجاج شيلي حاز">
+                        <p>1- دجاج شيلي حار <br> السعر: 41 ريال <br> السعرات الحرارية:388</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="دجاج 65.avif" alt="دجاج 65">
+                        <p>1- 65 دجاج <br> السعر:41  ريال <br> السعرات الحرارية:375</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="لحم منشوريان على الصاج.jpeg" alt="لحم منشوريان على الصاج">
+                        <p>1- لحم منشوريان على الصاج<br> السعر: 55 ريال <br> السعرات الحرارية:787</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                    <li>
+                        <img src="روبيان منشوريان على الصاج.webp" alt="روبيان منشوريان على الصاج ">
+                        <p>1-  روبيان منشوريان على الصاج <br> السعر: 57 ريال <br> السعرات الحرارية:435</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                  <li>
+                        <img src="سمك منشوريان على الصاج.avif" alt="سمك منشوريان على الصاج">
+                        <p>1-  سمك منشوريان علىالصاج<br> السعر: 44 ريال <br> السعرات الحرارية:452</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+
+                </ul>
+                <h3 id="grill-tandoori">ركن المشويات و التندوري</h3>
+                <ul>
+                    <li>                
+                        <img src="كباب دجاج.avif" alt="كباب دجاج">
+                        <p>1- كباب دجاج<br> السعر: 34 ريال <br> السعرات الحرارية:300 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="كباب لحم بلدي.avif" alt="كباب لحم بلدي">
+                            <p>1- كبابلحم بلدي<br> السعر: 49 ريال <br> السعرات الحرارية:463 </p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                            <li>                
+                                <img src="أوصال الدجاج.avif" alt="أوصال الدجاج">
+                                <p>1- أوصال الدجاج<br> السعر: 38 ريال <br> السعرات الحرارية: 287</p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                                <li>                
+                                    <img src="أاوصال لحم بلدي.avif" alt="اوصال لحم بلدي">
+                                    <p>1- اوصال لحم بلدي<br> السعر: 49 ريال <br> السعرات الحرارية:463 </p>
+                                </li>
+                                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                <li>
+                                    <li>                
+                                        <img src="مشاوي مهراني المشكلة.avif" alt="مشاوي مهراني المشكلة">
+                                        <p>1-مشاوي مهراني المشكلة <br> السعر: 706 ريال <br> السعرات الحرارية: 60</p>
+                                    </li>
+                                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                    <li><li>                
+                                        <img src="مشاوي مهراني مشكل دجاج.avif" alt="مشاوي مهراني مشكل دجاج">
+                                        <p>1- مشاوي مهراني مشكل دجاج<br> السعر: 488 ريال <br> السعرات الحرارية:55 </p>
+                             </li>
+                                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                             <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                              <li>
+                            <li>                
+                               <img src="شيش طاووق مع العظم.avif" alt="شيش طاووق مع العضم">
+                             <p>1-شيش طاووق مع العضم <br> السعر: 36 ريال <br> السعرات الحرارية: 422</p>
+                             </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                           <li>                
+                      <img src="ريش مشوية كستليتة.avif" alt="ريش مشوية كستليتة">
+                            <p>1- يش مشوية كستليتة<br> السعر: 62 ريال <br> السعرات الحرارية:805 </p>
+                      </li>
+                     <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                       <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                           <li>
+                       <li>           
+                     <img src="دجاج تكا مو تندوري.avif" alt="دجاج تكا مورغ تندوري">
+                            <p>1- دجاج تكا مورغ تندوري<br> السعر: 37 ريال <br> السعرات الحرارية: 450</p>
+                         </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                       <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>     
+                        <li>                
+                            <img src="روبيان تندوري.avif" alt="روبيان تندوري">
+                            <p>1- روبيان تندوري<br> السعر: 55 ريال <br> السعرات الحرارية: 489</p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                
+                </ul>
+                <h3 id="seafood">ركن المأكولات البحرية</h3>
+                <ul>
+                    <li>                
+                        <img src="فيليه سمك مقلي.avif" alt="فيليه سمك مقلي">
+                        <p>1-فيليه سمك مقلي <br> السعر: 42 ريال <br> السعرات الحرارية:470 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                         <li>                
+                        <img src="فيليه سمك مشوي مع الفلفل الأسود.jpeg" alt="فيليه سمك مشوي مع الفلفل الأسود">
+                         <p>1-فيليه سمك مشوي مع الفلفل الأسود  <br> السعر: 42 ريال <br> السعرات الحرارية:350 </p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                        <li>                
+                         <img src="فيليه السلمون.avif" alt="فيليه السلمون">
+                         <p>1- فيليه السلمون<br> السعر: 81 ريال <br> السعرات الحرارية: 360</p>
+                         </li>
+                         <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                         <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                         <li>
+                            <li>                
+                                <img src="إستكوزا مع القشطة.avif" alt="إستكوزا مع القشطة">
+                                <p>1- إستكوزا مع القشطة<br> السعر: 89 ريال <br> السعرات الحرارية:1053 </p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                         <li>                
+                        <img src="روبيان مقلي.avif" alt="روبيان مقلي">
+                        <p>1- روبيان مقلي<br> السعر: 54 ريال <br> السعرات الحرارية:662 </p>
+                        </li>
+                         <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                         <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                         <li>
+                          <li>                
+                         <img src="روبيان جامبو مشوي على الفحم.avif" alt="روبيان جامبو مشوي على الفحم">
+                         <p>1- روبيان جامبو مشوي على الفحم<br> السعر: 56 ريال <br> السعرات الحرارية: 456</p>
+                         </li>
+                         <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                         <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                         <li>
+                         <li>                
+                         <img src="سمكة كاملة.avif" alt="سمكة كاملة">
+                         <p>1- سمكة كاملة<br> السعر: 39 ريال <br> السعرات الحرارية: 412</p>
+                         </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                          <li>
+                </ul>
+                <h3 id="western-cuisine">ركن المأكولات الغربية</h3>
+                <ul>
+                    <li>                
+                        <img src="بيني مع البشاميل.avif" alt="بيني مع البشاميل">
+                        <p>1- بيني مع البشاميل<br> السعر: 37 ريال <br> السعرات الحرارية:632 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="إسباجتي نابولي.avif" alt="إسباجتي نابولي">
+                            <p>1- إسباجتي نابولي<br> السعر: 24 ريال <br> السعرات الحرارية:455 </p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                            <li>                
+                                <img src="فيتوتشيني ألفريدو مع الدجاج.avif" alt="فيتوتشيني ألفريدو  مع الدجاج">
+                                <p>1- فيتوتشيني ألفريدومع الدجاج<br> السعر: 35 ريال <br> السعرات الحرارية:1344</p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                            <li>                
+                                <img src="فيتوتشيني ألفريدو مع الزوبيان.avif" alt="فيتوتشيني ألفريدو مع الروبيان">
+                                <p>1- فيتوتشيني ألفريدو مع الروبيان<br> السعر: 39 ريال <br> السعرات الحرارية:1309 </p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                               
+                                <li>                
+                                    <img src="دجاج مع صلصلة الليمون.avif" alt="دجاج مع صلصلةالليمون">
+                                    <p>1- دجاج مع صلصلة الليمون<br> السعر: 42 ريال <br> السعرات الحرارية:388 </p>
+                                </li>
+                                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                <li>
+                                    <li>                
+                                        <img src="دجاج مع الفطر.jpeg" alt="دجاج مع الفطر">
+                                        <p>1- دجاج مع الفطر<br> السعر: 42 ريال <br> السعرات الحرارية: 468</p>
+                                    </li>
+                                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                    <li>
+                                        <li>                
+                                            <img src="ستيك لحم عجل مع الفلفل.jpeg" alt="ستيك لحم عجل مع الفلفل">
+                                            <p>1- ستيك لحم عجل مع الفلفل<br> السعر: 55 ريال <br> السعرات الحرارية:490 </p>
+                                        </li>
+                                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                        <li>  
+                                            <li>                
+                                                <img src="ستيك لحم عجل مع الفطر.avif" alt="ستيك لحم عجل مع الفطر">
+                                                <p>1- ستيك لحم عجل مع الفطر<br> السعر: 55 ريال <br> السعرات الحرارية:490 </p>
+                                            </li>
+                                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                            <li> 
+                                               
+                    
+                </ul>
+
+                <h3 id="rice-pasta">ركن الأرز والمكرونة</h3>
+                <ul>
+               <li>                
+                <img src="أرز برياني سادة.avif" alt="أرز برياني سادة">
+                <p>1- أرز برياني سادة<br> السعر: 16 ريال <br> السعرات الحرارية:380 </p>
+                 </li>
+               <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+               <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                 <li>
+                 <li>                
+                   <img src="أرز أبيض سادة.avif" alt="أرز أبيض سادة">
+                    <p>1-أرز أبيض سادة <br> السعر: 39 ريال <br> السعرات الحرارية:204 </p>
+                     </li>
+                     <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                     <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                     <li>
+                     <li>                
+                      <img src="أرز برياني مع الروبيان.avif" alt="أرز برياني مع الروبيان">
+                     <p>1-أرز برياني مع الروبيان <br> السعر: 40 ريال <br> السعرات الحرارية: 547</p>
+                    </li>
+                  <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                     <li>
+                    <li>                
+                   <img src="أرز برياني مع اللحم.avif" alt="أرز برياني مع اللحم">
+                   <p>1- أرز برياني مع اللحم<br> السعر: 39 ريال <br> السعرات الحرارية: 850</p>
+                    </li>
+                     <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                     <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                   <li>
+                     <li>                
+                     <img src="أرز برياني مع الدجاج.avif" alt="أرز برياني مع الدجاج">
+                   <p>1- أرز برياني مع الدجاج<br> السعر: 27 ريال <br> السعرات الحرارية: 754</p>
+                   </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                      <li>
+                 <li>                
+                  <img src="أرز برياني مع الخضار.avif" alt="أرز برياني مع الخضار">
+                  <p>1- أرز برياني مع الخضار<br> السعر: 19 ريال <br> السعرات الحرارية: 532</p>
+                  </li>
+                   <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+               <li>
+               <li>                
+               <img src="أرز صيني مقلي مع الخضار.avif" alt="أرز صيني مقلي مع الخضار">
+             <p>1- أرز صيني مقلي مع الخضار<br> السعر: 18 ريال <br> السعرات الحرارية:535 </p>
+           </li>
+           <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+            <li>
+          <li>                
+           <img src="أرز صيني مقلي مع الدجاج.avif" alt="أرز صيني مقلي مع الدجاج">
+             <p>1- أرز صيني مقلي مع الدجاج<br> السعر: 25 ريال <br> السعرات الحرارية:587 </p>
+           </li>
+           <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+          <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+          <li>
+            <li>                
+                 <img src="معكرونة الدجاج مع الخضار.avif" alt="معكرونة الدجاج مع الخضار">
+                <p>1- معكرونة الدجاج مع الخضار<br> السعر: 28 ريال <br> السعرات الحرارية:410</p>
+               </li>
+             <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+             <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+              <li>
+              <li>                
+               <img src="معكرونة مشكلة.avif" alt="معكرونة مشكلة">
+               <p>1- معكرونة مشكلة<br> السعر: 35 ريال <br> السعرات الحرارية:512</p>
+             </li>
+              <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+              <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                <li>
+                <li>                
+               <img src="معكرونة مع الصلصة.avif" alt="معكرونة مع الصلصة">
+                <p>1- معكرونة مع الصلصة<br> السعر: 25 ريال <br> السعرات الحرارية: 480</p>
+                </li>
+                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                 <li>   
+                </ul>
+
+                <h3 id="bread">ركن الخبز</h3>
+                <ul>
+                    <li>                
+                    <img src="خبز نان سادة.avif" alt="خبز نان سادة">
+                        <p>1- خبز نان سادة<br> السعر: 1 ريال <br> السعرات الحرارية:864 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                    <li>                
+                     <img src="خبز نان مع الزبدة.avif" alt="خبز نان مع الزبدة">
+                     <p>1- بز نان مع الزبدة"<br> السعر: 1  ريال <br> السعرات الحرارية:252 </p>
+                     </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                      <li>
+                     <li>                
+                     <img src="خبز نان مع الجبنة.avif" alt="خبز نان مع الجبنة">
+                       <p>1- خبز نان مع الجبنة<br> السعر: 2 ريال <br> السعرات الحرارية: 419</p>
+                       </li>
+                      <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                      <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                     <li>
+                    <li>                
+                    <img src="خبز نان مع الثوم.avif" alt="خبز نان مع الثوم">
+                       <p>1- خبز نان مع الثوم<br> السعر: 1 ريال <br> السعرات الحرارية:424 </p>
+                     </li>
+                     <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                      <li>                
+                       <img src="خبز نان مع الحبوب.avif" alt="خبز نان مع الحبوب">
+                      <p>1- خبز نان مع الحبوب<br> السعر: 2 ريال <br> السعرات الحرارية:229 </p>
+                    </li>
+                     <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                     <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                    <li>                
+                      <img src="سلة خبز.avif" alt="سلة خبز">
+                    <p>1- سلة خبز<br> السعر: 6 ريال <br> السعرات الحرارية: 1793</p>
+                      </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                     <li>  
+                </ul>
+              
+                <h3 id="kids-meal">وجبة الطفل</h3>
+                <ul>
+                    <li>                
+                        <img src="وجبة سبونج بوب.avif" alt="وجبة سبونج بوب">
+                        <p>1-وجبة سبونج بوب <br> السعر: 30 ريال <br> السعرات الحرارية:752 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="وجبة ميكي.avif" alt="وجبة ميكي">
+                            <p>1-وجبة ميكي <br> السعر: 25 ريال <br> السعرات الحرارية: 581</p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                </ul>
+
+                <h3 id="desserts">الحلويات</h3>
+                <ul>
+                    <li>                
+                        <img src="حلى قولاب جامون الهندية.avif" alt="حلى قولاب جامون الهندية">
+                        <p>1- حلى قولاب جامون الهندية<br> السعر: 23 ريال <br> السعرات الحرارية:302 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                    <li>                
+                        <img src="أم علي.avif" alt="أم علي">
+                        <p>1- أم علي<br> السعر: 25 ريال <br> السعرات الحرارية: 221</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="توتي فروتي.avif" alt="توتي فروتي">
+                            <p>1- توتي فروتي<br> السعر: 25 ريال <br> السعرات الحرارية:597 </p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                            <li>                
+                                <img src="الأيس كريم.avif" alt="الأيس كريم">
+                                <p>1-الأيس كريم <br> السعر: 22 ريال <br> السعرات الحرارية:424 </p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+
+                </ul>
+
+                <h3 id="cold-drinks">المشروبات الباردة</h3>
+                <ul>
+                    <li>                
+                        <img src="ميلك شيك.avif" alt="ميلك شيك">
+                        <p>1-ميلك شيك <br> السعر: 18 ريال <br> السعرات الحرارية: 310</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                     <li>                
+                   <img src="كوكتيل مهراني الخاص.jpeg" alt="كوكتيل مهراني الخاص">
+                  <p>1-كوكتيل مهراني الخاص <br> السعر: 17 ريال <br> السعرات الحرارية: 211</p>
+                   </li>
+                   <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                  <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                  <li>
+                  <li>                
+                    <img src="كوكتيل شمام مع الحليب.avif" alt="كوكتيل شمام مع الحليب">
+                    <p>1- كوكتيل شمام مع الحليب<br> السعر: 17 ريال <br> السعرات الحرارية: 216</p>
+                   </li>
+                 <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                  <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                 <li>
+                  <li>                
+                <img src="كوكتيل طبقات.avif" alt="كوكتيل طبقات">
+                  <p>1- كوكتيل طبقات<br> السعر: 13 ريال <br> السعرات الحرارية:148 </p>
+                </li>
+                  <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                   <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                   <li>
+                    <li>                
+                        <img src="عصير رمان طازج.avif" alt="عصير برتقال طازج">
+                        <p>1- عصير برتقال طازج<br> السعر: 14 ريال <br> السعرات الحرارية: 118</p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                     <img src="عصير ليمون مع نعناع.avif" alt="عصير ليمون مع نعناع">
+                     <p>1- عصير ليمون مع نعناع<br> السعر: 13 ريال <br> السعرات الحرارية:53 </p>
+                  </li>
+                  <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                 <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                  <li>
+                    <li>                
+                        <img src="عصير رمان طازج.avif" alt="عصير رمان طازج">
+                        <p>1- عصير رمان طازج<br> السعر: 18 ريال <br> السعرات الحرارية:139 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="عصير مانجو طازج.avif" alt="عصير مانجو طازج">
+                            <p>1- عصير مانجو طازج<br> السعر: 12 ريال <br> السعرات الحرارية:165</p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                            <li>                
+                                <img src="عصير جوافة.avif" alt="عصير جوافة">
+                                <p>1-عصير جوافة <br> السعر: 12 ريال <br> السعرات الحرارية:175 </p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                                <li>                
+                                    <img src="عصير فراولة.avif" alt="عصير فراولة">
+                                    <p>1- عصير فراولة<br> السعر: 12 ريال <br> السعرات الحرارية:110 </p>
+                                </li>
+                                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                   <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                   <li>
+                    <li>                
+                        <img src="سعودي شامبين.avif" alt="سعودي شامبين">
+                        <p>1- سعودي شامبين<br> السعر: 14 ريال <br> السعرات الحرارية:110 </p>
+                    </li>
+                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="كوكتيل بطبوط للأطفال.avif" alt="كوكتيل بطبوط للأطفال">
+                            <p>1- كوكتيل بطبوط للأطفال<br> السعر: 10 ريال <br> السعرات الحرارية: 214</p>
+                        </li>
+                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                        <li>
+                            <li>                
+                                <img src="كوكتيل سدني.avif" alt="كوكتيلسدني">
+                                <p>1- كوكتيل سدني<br> السعر: 16 ريال <br> السعرات الحرارية: 64</p>
+                            </li>
+                            <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                            <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                            <li>
+                                <li>                
+                                    <img src="جيك برتقال.avif" alt="جيك برتقال">
+                                    <p>1- جيك برتقال<br> السعر: 46 ريال <br> السعرات الحرارية:472 </p>
+                                </li>
+                                <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                <li>
+                                    <li>                
+                                        <img src="جيك شمبانيا.avif" alt="جيك شمبانيا">
+                                        <p>1- جيك شمبانيا<br> السعر: 40 ريال <br> السعرات الحرارية:440 </p>
+                                    </li>
+                                    <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                    <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                    <li>
+                                        <li>                
+                                            <img src="جيك كوكتيل طبقات.jpeg" alt="جيك كوكتيل طبقات">
+                                            <p>1-جيك كوكتيل طبقات <br> السعر: 594 ريال <br> السعرات الحرارية: 39</p>
+                                        </li>
+                                        <button class="btn" onclick="completerder()">إضافة لقائمة الطلبات </button>
+                                        <button class="btn" onclick="cancelrder()">حذف من قائمة الطلبات</button>
+                                        <li>
+                                            <li>                
+                                                <img src="جيك مهراني الخاص.jpeg" alt="جيك مهراني الخاص">
+                                                <p>1- جيك مهراني الخاص<br> السعر: 43 ريال <br> السعرات الحرارية:846 </p>
+                                            </li>
+                                            <button class="btn" onclick="completerder(' جيك مهراني الخاص', '43')">إضافة لقائمة الطلبات </button>
+                                            <button class="btn" onclick="cancelrder(' جيك مهراني الخاص', '43')">حذف من قائمة الطلبات</button>
+                                            <li>
+                        
+                                                                                 
+                </ul>
+
+                <h3 id="drinks">المشروبات</h3>
+                <ul>
+                    <li>                
+                        <img src="مشروبات غازية.jpeg" alt="مشروبات غازية">
+                        <p>1-مشروبات غازية <br> السعر: 4 ريال <br> السعرات الحرارية:- </p>
+                    </li>
+                    <button class="btn" onclick="completerder('مشروبات غازية ', '4')">إضافة لقائمة الطلبات </button>
+                    <button class="btn" onclick="cancelrder('مشروبات غازية ', '4')">حذف من قائمة الطلبات</button>
+                    <li>
+                        <li>                
+                            <img src="مياه معدنية.avif" alt="مياه معدنية">
+                            <p>1- مياه معدنية<br> السعر: 1 ريال <br> السعرات الحرارية:- </p>
+                        </li>
+                        <button class="btn" onclick="completerder(' مياه معدنية', '1')">إضافة لقائمة الطلبات </button>
+                        <button class="btn" onclick="cancelrder(' مياه معدنية', '1')">حذف من قائمة الطلبات</button>
+                        <li>
+
+                </ul>
+            </ul>
+            </div>        
+            <button class="btn" onclick="completeOrder()">إتمام الطلب</button>
+        </section>
+    <script>
+
+       document.addEventListener('DOMContentLoaded', function() {
+            var menuLinks = document.querySelectorAll('.sidebar a');
+            
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var targetId = link.getAttribute('href').substring(1);
+                    var targetElement = document.getElement
+      if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20, // تعيين المسافة العلوية التي تريدها
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+    document.querySelectorAll('.sidebar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    function completeOrder() {
+            // هنا يمكنك إضافة التعليمات لإتمام الطلب
+            alert('مراجعة قائمة الطلبات');
+            // التوجيه إلى صفحة الحساب
+            window.location.href = 'cart.html'; // استبدل بالمسار الصحيح لصفحة الحساب
+        }
+    
+    
+    let item_index = 0;
+
+function completerder(itemName, itemPrice) {
+    // استرجاع السلة الحالية من التخزين المحلي أو تهيئة واحدة جديدة
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // إضافة العنصر الجديد إلى السلة
+    cart.push({ name: "شوربة كريمة مع الدجاج", price: "18", index: item_index });
+    item_index++;
+
+    // حفظ السلة المحدثة في التخزين المحلي
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('تم إضافة العنصر إلى السلة!');
+}
+
+function cancelrder(itemName, itemPrice) {
+    // استرجاع السلة الحالية من التخزين المحلي أو تهيئة واحدة جديدة
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (cart.length === 0) {
+        alert('السلة فارغة!');
+        return;
+    }
+    let i = 0;
+    // البحث عن العنصر في السلة
+    for (; i < cart.length; i++) {
+        if (cart[i].name === "شوربة دجاج مع الكريمة" && cart[i].price=== '18') {
+            // إزالة العنصر من السلة
+            cart.splice(i, 1);
+            break;
+        }
+    }
+    // حفظ السلة المحدثة في التخزين المحلي
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('تم إزالة العنصر من السلة!');
+}
+
+// لإضافة عنصر باسم "شوربة الدجاج مع الكريمة" وسعره 18
+completerder('شوربة الدجاج مع الكريمة', 18);
+
+// لإزالة عنصر باسم "شوربة الدجاج مع الكريمة" وسعره 18
+cancelrder('شوربة الدجاج مع الكريمة', 18);
+
+    </script>
+    </body>
+</html>

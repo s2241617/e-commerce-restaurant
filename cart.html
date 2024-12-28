@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الطلبات</title>
+    <style>
+     
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color:  #c13636; /* اللون الأحمر */
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .order-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .order-list h2 {
+            margin-bottom: 20px;
+        }
+
+        .order-list button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #d0b622;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .order-list button:hover {
+            background-color: #d0b622;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background-color: #c13636;  /* اللون الأحمر */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer button {
+            padding: 10px 20px;
+            background-color:#d0b622; /* اللون الأحمر */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .footer button:hover {
+            background-color:black; 
+        }
+        h2{
+        text-align: center;
+        }
+        .container {
+    text-align: center;
+}
+
+.header-title {
+    margin-bottom: 20px;
+}
+.header-nav {
+    display: inline-flex;
+    justify-content:baseline
+}
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+li {
+    list-style: none;
+   
+    padding: 10px;
+    margin: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+li:hover {
+    background-color: #e9e9e9;
+}
+
+    </style>
+</head>
+<body>
+  
+</header>
+    <div class="container">
+        <div class="header">
+            <h1>قائمة الطلبات</h1>
+          
+        </div>
+       
+        <div class="order-list">
+            <h2>الطلبات</h2>
+            <ul id="orders">
+                <!-- الطلبات ستظهر هنا -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button onclick="completeOrder()">إتمام الطلب والانتقال إلى حسابي</button>
+        <button onclick="cancelOrder()">إلغاء الطلب</button>
+    </div>
+
+    <script>
+        // قائمة لتخزين الطلبات
+        var orderList = [];
+
+        // دالة لإضافة طلب جديد إلى القائمة
+        function addToOrder(item) {
+            orderList.push(item);
+            renderOrderList();
+        }
+
+        // دالة لإظهار الطلبات في القائمة
+        function renderOrderList() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // get the cart items from the localStorage or an empty array if it's not available
+            var ordersElement = document.getElementById('orders');
+            ordersElement.innerHTML = '';
+            cart.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - ${item.price} ريال سعودي`;
+                ordersElement.appendChild(listItem);
+            });
+        }
+
+       
+         // دالة لإتمام الطلب والانتقال إلى صفحة الحساب
+         function completeOrder() {
+            // هنا يمكنك إضافة التعليمات لإتمام الطلب
+            alert('تم إتمام الطلب!');
+            // التوجيه إلى صفحة الحساب
+            window.location.href = 'account.html'; // استبدل بالمسار الصحيح لصفحة الحساب
+        }
+
+        // دالة لإلغاء الطلبات
+        function cancelOrder() {
+            // orderList = []; removing the items should be done in the localStorage because the orderList is not persistent
+            localStorage.removeItem('cart');
+            renderOrderList();
+            alert('تم الغاء الطلب!');
+            window.location.href = 'menu.html'; // استبدل بالمسار الصحيح لصفحة الحساب
+
+
+        }
+
+        window.onload = renderOrderList;
+        
+    </script>
+</body>
+</html>

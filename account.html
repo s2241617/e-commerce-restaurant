@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> حسابي </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color:  #c13636;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .login-form, .payment-form, .personal-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .login-form h2, .payment-form h2, .personal-info h2 {
+            margin-bottom: 20px;
+        }
+        .login-form input, .payment-form input, .personal-info input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-form button, .payment-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #c13636;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form button:hover, .payment-form button:hover {
+            background-color: #c13636; ;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+        .personal-info input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.personal-info button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c13636;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.personal-info button:hover {
+    background-color:  #c13636;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>حسابي</h1>
+    </div>
+
+    <div class="container">
+        <div class="login-form">
+            <h2>تسجيل الدخول</h2>
+            <input type="text" id="username" placeholder="اسم المستخدم">
+            <input type="password" id="password" placeholder="كلمة المرور">
+            <button onclick="login()">تسجيل الدخول</button>
+            <p id="error-message" class="error-message">اسم المستخدم أو كلمة المرور غير صحيحة</p>
+        </div>
+
+        <div class="payment-form">
+            <h2>معلومات الدفع</h2>
+            <input type="text" id="cardNumber" placeholder="رقم بطاقة الائتمان">
+            <input type="text" id="expiryDate" placeholder="تاريخ الانتهاء (MM/YY)">
+            <input type="text" id="cvv" placeholder="رمز الأمان">
+            <button onclick="processPayment()">إكمال الدفع</button>
+            <p id="payment-error-message" class="error-message">الرجاء إدخال معلومات الدفع بشكل صحيح</p>
+        </div>
+
+        <div class="personal-info">
+            <h2>المعلومات شخصية</h2>
+        <input type="text" id="name" placeholder="الاسم">
+        <input type="number" id="age" placeholder="العمر">
+        <button onclick="submitPersonalInfo()">حفظ</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+            
+            if (username === 'admin' && password === 'password') {
+                alert('تم تسجيل الدخول بنجاح');
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function processPayment() {
+            var cardNumber = document.getElementById('cardNumber').value;
+            var expiryDate = document.getElementById('expiryDate').value;
+            var cvv = document.getElementById('cvv').value;
+            var paymentErrorMessage = document.getElementById('payment-error-message');
+            
+            if (validatePaymentInfo(cardNumber, expiryDate, cvv)) {
+                alert('تمت عملية الدفع بنجاح');
+                paymentErrorMessage.style.display = 'none';
+            } else {
+                paymentErrorMessage.style.display = 'block';
+            }
+        }
+
+        function validatePaymentInfo(cardNumber, expiryDate, cvv) {
+            // يمكنك هنا إضافة التحقق من صحة معلومات بطاقة الائتمان وتاريخ الانتهاء ورمز الأمان
+            // هذا مجرد مثال بسيط
+            if (cardNumber.length !== 16 || expiryDate.length !== 5 || cvv.length !== 3) {
+                return false;
+            }
+            return true;
+        }
+        function submitPersonalInfo() {
+    var name = document.getElementById('name').value;
+    var age = document.getElementById('age').value;
+    
+    // يمكنك هنا إجراء أي عمليات إضافية مثل التحقق من صحة المعلومات أو حفظها في قاعدة البيانات
+    alert('تم حفظ المعلومات: الاسم: ' + name + '، العمر: ' + age);
+}
+    </script>
+</body>
+</html>
